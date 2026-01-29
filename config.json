@@ -1,0 +1,39 @@
+
+{
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "images/icon.png",
+    "category": "customer",
+    "isConfigured": false,
+    "configOnDrop": true
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "Send to MuleSoft",
+      "description": "Calls MuleSoft to orchestrate downstream systems."
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [],
+      "outArguments": [],
+      "url": "https://REPLACE-WITH-MULE/execute",
+      "useJwt": true,
+      "timeout": 60000,
+      "retryCount": 3,
+      "retryDelay": 3000,
+      "concurrentRequests": 5
+    }
+  },
+  "configurationArguments": {
+    "applicationExtensionKey": "REPLACE-WITH-YOUR-PACKAGE-KEY",
+    "save":    { "url": "https://REPLACE-WITH-MULE/save",    "useJwt": true },
+    "publish": { "url": "https://REPLACE-WITH-MULE/publish", "useJwt": true },
+    "validate":{ "url": "https://REPLACE-WITH-MULE/validate","useJwt": true },
+    "stop":    { "url": "https://REPLACE-WITH-MULE/stop",    "useJwt": true }
+  },
+  "userInterfaces": {
+    "configModal": { "height": 480, "width": 480 }
+  }
+}
