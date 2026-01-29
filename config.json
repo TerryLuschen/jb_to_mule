@@ -18,7 +18,7 @@
     "execute": {
       "inArguments": [],
       "outArguments": [],
-      "url": "https://REPLACE-WITH-MULE/execute",
+      "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/execute",
       "useJwt": true,
       "timeout": 60000,
       "retryCount": 3,
@@ -28,10 +28,10 @@
   },
   "configurationArguments": {
     "applicationExtensionKey": "REPLACE-WITH-YOUR-PACKAGE-KEY",
-    "save":    { "url": "https://REPLACE-WITH-MULE/save",    "useJwt": true },
-    "publish": { "url": "https://REPLACE-WITH-MULE/publish", "useJwt": true },
-    "validate":{ "url": "https://REPLACE-WITH-MULE/validate","useJwt": true },
-    "stop":    { "url": "https://REPLACE-WITH-MULE/stop",    "useJwt": true }
+    "save":    { "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/save",    "useJwt": true },
+    "publish": { "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/publish", "useJwt": true },
+    "validate":{ "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/validate","useJwt": true },
+    "stop":    { "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/stop",    "useJwt": true }
   },
   "userInterfaces": {
     "configModal": { "height": 480, "width": 480 }
