@@ -1,0 +1,35 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Terry – JB → Mule Custom Activity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+    label { display:block; margin-top: 16px; font-weight:600; }
+    input, select, button { padding: 8px; font-size: 14px; }
+    button { margin-top: 20px; }
+    .hint { color:#666; font-size:12px; }
+  </style>
+</head>
+<body>
+  <h2>Send to MuleSoft – Custom Activity</h2>
+  <p class="hint">Configure the API URL and (optionally) bind a Journey field.</p>
+
+  <label for="apiUrl">MuleSoft API URL</label>
+  <input id="apiUrl" type="url" placeholder="https://api.example.com/journey/execute" style="width:100%" />
+
+  <label for="fieldPicker">Bind a field from Entry Source (optional)</label>
+  <select id="fieldPicker">
+    <option value="">— none —</option>
+  </select>
+
+  <button id="done">Done</button>
+
+  <!-- Postmonger must be local in your repo -->
+  <script src="./postmonger.js"></script>
+  <!-- Your Postmonger client logic -->
+  <script src="./customActivity.js"></script>
+</body>
+</html>
