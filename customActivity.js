@@ -1,0 +1,96 @@
+
+/* global Postmonger */
+(function () {
+  'use strict';
+
+  // Create the Postmonger session (bridge to Journey Builder)
+  const connection = new Postmonger.Session();
+
+  // Journey Builder supplies this payload when we call 'ready'
+  let activity = {};
+  let schema = [];
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Listen to JB lifecycle events
+    connection.on('initActivity', onInitActivity);
+    connection.on('requestedTokens', onTokens);
+    connection.on('requestedEndpoints', onEndpoints);
+    connection.on('requestedSchema', onRequestedSchema); // common pattern in field pickers
+
+    // Signal readiness and request useful context
+    connection.trigger('ready');
+    connection.trigger('requestTokens');
+    connection.trigger('requestEndpoints');
+
+    // Optionally, ask for Entry Source schema (undocumented but widely used in the field)
+    connection.trigger('requestSchema');
+
+    // Bind UI
+    document.getElementById('done').addEventListener('click', onDone);
+  });
+
+  function onInitActivity (payload) {
+    activity = payload || {};
+    // Re-hydrate UI if the activity is being edited
+    try {
+      const args = (activity.arguments?.execute?.inArguments || [])[0] || {};
+      if (args.apiUrl) document.getElementById('apiUrl').value = args.apiUrl;
+      if (args.selectedField) document.getElementById('fieldPicker').value = args.selectedField;
+    } catch (e) {}
+  }
+
+  function onTokens (tokens) {
+    // If you ever need REST/SOAP tokens, they arrive here
+    // console.log('JB tokens:', tokens);
+  }
+
+  function onEndpoints (endpoints) {
+    // REST base URL for BU, if you need it
+    // console.log('JB endpoints:', endpoints);
+  }
+
+  function onRequestedSchema (payload) {
+    schema = payload?.schema || [];
+    const select = document.getElementById('fieldPicker');
+
+    // Keep current value if re-opening
+    const current = select.value;
+    // Reset options (leave the first '— none —')
+    select.length = 1;
+
+    // Populate with Entry Source keys (e.g., {{Event.APIEvent-UUID.Email}})
+    schema.forEach(col => {
+      const opt = document.createElement('option');
+      opt.value = `{{${col.key}}}`;
+      opt.textContent = col.key.split('.').pop();
+      select.appendChild(opt);
+    });
+
+    if (current) select.value = current;
+  }
+
+  function onDone () {
+    const apiUrl = document.getElementById('apiUrl').value?.trim() || '';
+    const selectedField = document.getElementById('fieldPicker').value || '';
+
+    // Validate minimal config
+    if (!apiUrl) {
+      alert('Please provide a MuleSoft API URL.');
+      return;
+    }
+
+    // Build inArguments that JB will POST to /execute at run time
+    const inArguments = [{
+      apiUrl,            // static value from UI
+      selectedField      // optional mustache ref to Journey Data
+    }];
+
+    // Mutate the activity payload we received and hand back to JB
+    activity.arguments = activity.arguments || {};
+    activity.arguments.execute = activity.arguments.execute || {};
+    activity.arguments.execute.inArguments = inArguments;
+
+    // Tell Journey Builder to save this configuration
+    connection.trigger('updateActivity', activity);
+  }
+})();
