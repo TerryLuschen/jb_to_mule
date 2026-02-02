@@ -19,7 +19,7 @@
       "inArguments": [],
       "outArguments": [],
       "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/execute",
-      "useJwt": true,
+      "useJwt": false,
       "timeout": 60000,
       "retryCount": 3,
       "retryDelay": 3000,
@@ -27,11 +27,11 @@
     }
   },
   "configurationArguments": {
-    "applicationExtensionKey": "REPLACE-WITH-YOUR-PACKAGE-KEY",
-    "save":    { "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/save",    "useJwt": true },
-    "publish": { "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/publish", "useJwt": true },
-    "validate":{ "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/validate","useJwt": true },
-    "stop":    { "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/stop",    "useJwt": true }
+    "applicationExtensionKey": "MY_KEY_ANYTHING_I_WANT_MULESOFT_TEST",
+    "save":    { "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/save",    "useJwt": false },
+    "publish": { "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/publish", "useJwt": false },
+    "validate":{ "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/validate","useJwt": false },
+    "stop":    { "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/stop",    "useJwt": false }
   },
   "userInterfaces": {
     "configModal": { "height": 480, "width": 480 }
