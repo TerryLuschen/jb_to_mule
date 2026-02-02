@@ -34,6 +34,8 @@
     // Re-hydrate UI if the activity is being edited
     try {
       const args = (activity.arguments?.execute?.inArguments || [])[0] || {};
+      alert(args.apiUrl);
+      alert(args.selectedField);
       if (args.apiUrl) document.getElementById('apiUrl').value = args.apiUrl;
       if (args.selectedField) document.getElementById('fieldPicker').value = args.selectedField;
     } catch (e) {}
