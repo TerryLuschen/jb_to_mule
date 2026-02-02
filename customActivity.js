@@ -106,7 +106,8 @@
     activity.metaData = activity.metaData || {};
     activity.metaData.isConfigured = true;
 
-    console.log('payload saving:', JSON.stringify(activity, null, 2));
+    alert(activity.metaData);
+    // console.log('payload saving:', JSON.stringify(activity, null, 2));
 
     // Tell Journey Builder to save this configuration
     connection.trigger('updateActivity', activity);
