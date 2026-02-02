@@ -67,14 +67,16 @@
     schema.forEach(col => {
       const opt = document.createElement('option');
       opt.value = `{{${col.key}}}`;
-      alert(opt.value);
+      // alert(opt.value);
       opt.textContent = col.key.split('.').pop();
-      alert(opt.textContent);
+      // alert(opt.textContent);
       select.appendChild(opt);
     });
 
     if (current) select.value = current;
+    alert(pendingSelectedField);
     if (pendingSelectedField) select.value = pendingSelectedField;
+    alert(select.value);
     
   }
 
