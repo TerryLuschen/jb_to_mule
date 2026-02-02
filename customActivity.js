@@ -78,6 +78,7 @@
       alert('Please provide a MuleSoft API URL.');
       return;
     }
+    alert(selectedField);
 
     // Build inArguments that JB will POST to /execute at run time
     const inArguments = [{
