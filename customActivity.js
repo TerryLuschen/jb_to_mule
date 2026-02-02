@@ -17,6 +17,7 @@
     connection.on('requestedTokens', onTokens);
     connection.on('requestedEndpoints', onEndpoints);
     connection.on('requestedSchema', onRequestedSchema); // common pattern in field pickers
+    connection.on('clickedNext', onDone);
 
     // Signal readiness and request useful context
     connection.trigger('ready');
@@ -35,12 +36,12 @@
     // Re-hydrate UI if the activity is being edited
     try {
       const args = (activity.arguments?.execute?.inArguments || [])[0] || {};
-      alert(args.apiUrl);
-      alert(args.selectedField);
+      // alert(args.apiUrl);
+      // alert(args.selectedField);
       if (args.apiUrl) document.getElementById('apiUrl').value = args.apiUrl;
       if (args.selectedField) document.getElementById('fieldPicker').value = args.selectedField;
       pendingSelectedField = args.selectedField;
-      alert(pendingSelectedField);
+      // alert(pendingSelectedField);
     } catch (e) {}
   }
 
@@ -74,9 +75,9 @@
     });
 
     if (current) select.value = current;
-    alert(pendingSelectedField);
+    // alert(pendingSelectedField);
     if (pendingSelectedField) select.value = pendingSelectedField;
-    alert(select.value);
+    // alert(select.value);
     
   }
 
@@ -89,7 +90,7 @@
       alert('Please provide a MuleSoft API URL.');
       return;
     }
-    alert(selectedField);
+    // alert(selectedField);
 
     // Build inArguments that JB will POST to /execute at run time
     const inArguments = [{
