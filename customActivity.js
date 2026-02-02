@@ -103,12 +103,13 @@
     activity.arguments.execute = activity.arguments.execute || {};
     activity.arguments.execute.inArguments = inArguments;
 
+    alert('1');
     activity.metaData = activity.metaData || {};
     activity.metaData.isConfigured = true;
 
-    alert('1');
-    alert(activity.metaData);
     alert('2');
+    alert(activity.metaData);
+    alert('3');
     // console.log('payload saving:', JSON.stringify(activity, null, 2));
 
     // Tell Journey Builder to save this configuration
