@@ -103,6 +103,9 @@
     activity.arguments.execute = activity.arguments.execute || {};
     activity.arguments.execute.inArguments = inArguments;
 
+    activity.metaData = activity.metaData || {};
+    activity.metaData.isConfigured = true;
+
     // Tell Journey Builder to save this configuration
     connection.trigger('updateActivity', activity);
   }
