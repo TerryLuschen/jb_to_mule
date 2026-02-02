@@ -90,7 +90,7 @@
       alert('Please provide a MuleSoft API URL.');
       return;
     }
-    // alert(selectedField);
+    alert(selectedField);
 
     // Build inArguments that JB will POST to /execute at run time
     const inArguments = [{
@@ -106,7 +106,9 @@
     activity.metaData = activity.metaData || {};
     activity.metaData.isConfigured = true;
 
+    alert('1');
     alert(activity.metaData);
+    alert('2');
     // console.log('payload saving:', JSON.stringify(activity, null, 2));
 
     // Tell Journey Builder to save this configuration
