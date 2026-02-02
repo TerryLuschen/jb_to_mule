@@ -39,7 +39,7 @@
       alert(args.selectedField);
       if (args.apiUrl) document.getElementById('apiUrl').value = args.apiUrl;
       if (args.selectedField) document.getElementById('fieldPicker').value = args.selectedField;
-      let pendingSelectedField = args.selectedField;
+      pendingSelectedField = args.selectedField;
       alert(pendingSelectedField);
     } catch (e) {}
   }
