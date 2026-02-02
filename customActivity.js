@@ -9,6 +9,7 @@
   // Journey Builder supplies this payload when we call 'ready'
   let activity = {};
   let schema = [];
+  let pendingSelectedField = null;  // holds saved token until options exist
 
   document.addEventListener('DOMContentLoaded', () => {
     // Listen to JB lifecycle events
@@ -38,6 +39,8 @@
       alert(args.selectedField);
       if (args.apiUrl) document.getElementById('apiUrl').value = args.apiUrl;
       if (args.selectedField) document.getElementById('fieldPicker').value = args.selectedField;
+      let pendingSelectedField = args.selectedField;
+      alert(pendingSelectedField);
     } catch (e) {}
   }
 
@@ -71,6 +74,8 @@
     });
 
     if (current) select.value = current;
+    if (pendingSelectedField) select.value = pendingSelectedField;
+    
   }
 
   function onDone () {
