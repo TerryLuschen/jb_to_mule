@@ -87,7 +87,7 @@
 
     // Validate minimal config
     if (!apiUrl) {
-      alert('Please provide a MuleSoft API URL.1');
+      alert('Please provide a MuleSoft API URL.10');
       return;
     }
     alert(selectedField);
