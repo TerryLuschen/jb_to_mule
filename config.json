@@ -17,7 +17,15 @@
   "arguments": {
     "execute": {
       "inArguments": [],
-      "outArguments": [],
+      "outArguments": 
+            [
+              {
+                "status": {
+                  "dataType": "Text",
+                  "isNullable": true
+                }
+              }
+            ],
       "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/execute",
       "useJwt": false,
       "timeout": 60000,
