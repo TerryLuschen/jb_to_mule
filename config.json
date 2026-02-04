@@ -48,7 +48,7 @@
                   {
                       "status":{
                           "dataType":"Text",
-                          "isNullable":false,
+                          "isNullable":true,
                           "access":"visible",
                           "direction":"out"
                       }
