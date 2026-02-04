@@ -21,7 +21,9 @@
         {
           "status": {
             "dataType": "Text",
-            "isNullable": true
+            "isNullable": true,
+            "access": "Visible",
+            "direction": "Out"
           }
         }
       ],
