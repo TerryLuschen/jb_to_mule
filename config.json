@@ -10,7 +10,7 @@
   "type": "REST",
   "lang": {
     "en-US": {
-      "name": "Send to MuleSoft",
+      "name": "Send to MuleSoft V2",
       "description": "Calls MuleSoft to orchestrate downstream systems V3."
     }
   },
