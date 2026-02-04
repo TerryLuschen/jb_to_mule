@@ -4,14 +4,14 @@
   "metaData": {
     "icon": "images/icon.png",
     "category": "customer",
-    "isConfigured": false,
-    "configOnDrop": true
+    "isConfigured": true,
+    "configOnDrop": false
   },
   "type": "REST",
   "lang": {
     "en-US": {
       "name": "Send to MuleSoft",
-      "description": "Calls MuleSoft to orchestrate downstream systems V2."
+      "description": "Calls MuleSoft to orchestrate downstream systems V3."
     }
   },
   "arguments": {
