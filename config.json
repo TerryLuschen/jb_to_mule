@@ -11,21 +11,20 @@
   "lang": {
     "en-US": {
       "name": "Send to MuleSoft",
-      "description": "Calls MuleSoft to orchestrate downstream systems."
+      "description": "Calls MuleSoft to orchestrate downstream systems V2."
     }
   },
   "arguments": {
     "execute": {
       "inArguments": [],
-      "outArguments": 
-            [
-              {
-                "status": {
-                  "dataType": "Text",
-                  "isNullable": true
-                }
-              }
-            ],
+      "outArguments": [
+        {
+          "status": {
+            "dataType": "Text",
+            "isNullable": true
+          }
+        }
+      ],
       "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/execute",
       "useJwt": false,
       "timeout": 60000,
