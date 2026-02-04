@@ -10,8 +10,8 @@
   "type": "REST",
   "lang": {
     "en-US": {
-      "name": "Send to MuleSoft V2",
-      "description": "Calls MuleSoft to orchestrate downstream systems V3."
+      "name": "Send to MuleSoft V4",
+      "description": "Calls MuleSoft to orchestrate downstream systems V4."
     }
   },
   "arguments": {
@@ -19,12 +19,7 @@
       "inArguments": [],
       "outArguments": [
         {
-          "status": {
-            "dataType": "Text",
-            "isNullable": true,
-            "access": "Visible",
-            "direction": "Out"
-          }
+          "status": "DefaultStatus"
         }
       ],
       "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/execute",
@@ -44,5 +39,22 @@
   },
   "userInterfaces": {
     "configModal": { "height": 480, "width": 480 }
+  },
+  "schema":{
+      "arguments":{
+          "execute":{
+              "inArguments": [],
+              "outArguments":[
+                  {
+                      "status":{
+                          "dataType":"Text",
+                          "isNullable":false,
+                          "access":"visible",
+                          "direction":"out"
+                      }
+                  }
+              ]
+          }
+      }
   }
 }
