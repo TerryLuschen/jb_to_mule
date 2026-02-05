@@ -1,0 +1,59 @@
+{
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "images/icon.png",
+    "category": "customer",
+    "isConfigured": true,
+    "configOnDrop": false
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "Send to MuleSoft V3a",
+      "description": "Calls MuleSoft to orchestrate downstream systems V3a."
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [],
+      "outArguments": [
+        {
+          "status": "DefaultStatus"
+        }
+      ],
+      "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/execute",
+      "useJwt": true,
+      "timeout": 60000,
+      "retryCount": 3,
+      "retryDelay": 3000,
+      "concurrentRequests": 5
+    }
+  },
+  "configurationArguments": {
+    "applicationExtensionKey": "MY_KEY_ANYTHING_I_WANT_MULESOFT_TEST",
+    "save":    { "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/save",    "useJwt": false },
+    "publish": { "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/publish", "useJwt": false },
+    "validate":{ "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/validate","useJwt": false },
+    "stop":    { "url": "https://marketingcloudmuleapi-pupnzr.rajrd4-1.usa-e1.cloudhub.io/api/marketingCloud/stop",    "useJwt": false }
+  },
+  "userInterfaces": {
+    "configModal": { "height": 480, "width": 480 }
+  },
+  "schema":{
+      "arguments":{
+          "execute":{
+              "inArguments": [],
+              "outArguments":[
+                  {
+                      "status":{
+                          "dataType":"Text",
+                          "isNullable":true,
+                          "access":"visible",
+                          "direction":"out"
+                      }
+                  }
+              ]
+          }
+      }
+  }
+}
